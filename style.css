@@ -1,0 +1,170 @@
+body{
+    margin:0;
+    background-color: #000;
+    font-size:25px;
+    color:#209781;
+    text-align: center;
+    font-family: 'Inconsolata';
+}
+p{
+    letter-spacing: 10px;
+}
+h2{
+    font-size: 45px;
+    letter-spacing: 15px;
+    margin-bottom: 0px;
+}
+
+.board{
+    max-width: 1000px;
+    margin:0 auto;
+    text-align: center;
+}
+
+.card{
+    width:150px;
+    height: 150px;
+    display: inline-block;
+    margin:3px;
+    border-radius:50%;
+    border:2px solid #209781;
+    cursor:pointer;
+    filter:brightness(80%);
+    perspective:400px;
+    background: transparent;
+    transition: all 0.3s;
+    background-position: center center;
+    background-size:150px 150px;
+}
+
+.card:hover{
+    border:4px solid brown;
+    filter:brightness(100%);
+}
+
+.c1{
+    background-image:url("img/1.jpg"); 
+}
+.c2{
+    background-image:url("img/2.jpg"); 
+}
+.c3{
+    background-image:url("img/3.jpg"); 
+}
+.c4{
+    background-image:url("img/4.jpg"); 
+}
+.c5{
+    background-image:url("img/5.jpg"); 
+}
+.c6{
+    background-image:url("img/6.jpg"); 
+}
+.c7{
+    background-image:url("img/7.jpg"); 
+}
+.c8{
+    background-image:url("img/8.jpg"); 
+}
+.c9{
+    background-image:url("img/9.jpg"); 
+}
+
+.hid{
+    background-image:url("img/images.png"); 
+    transform:rotateY(180deg);
+}
+
+.off{
+    background-image:url("img/black.jpg");
+    border:4px solid black;
+}
+
+.off:hover{
+    cursor: auto;
+    border:4px solid #000;
+}
+
+.score{
+    margin-top:5px;
+    letter-spacing: 5px;
+}
+
+
+.loading{
+    position:absolute;
+    top:0;
+    left:0;
+    margin:0 0;
+    padding: 0;
+     z-index: 100; 
+    width: 100vw;
+    height: 100vh;
+    background-color: black; 
+}
+
+.ring{
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 60px;
+    height: 60px;
+    perspective: 500px;
+}
+
+span{
+    position: absolute;
+    border:7px solid #262626;
+    border-radius:3px;
+}
+span::before{
+    content: "";
+    position: absolute;
+    top:-7px;
+    left:-7px;
+    width:7px;
+    height: 50%;
+    background: #ff0
+}
+
+span::after{
+    content: "";
+    position: absolute;
+    bottom:-7px;
+    right:-7px;
+    width:7px;
+    height: 50%;
+    background: #ff0
+}
+
+span:nth-child(1){
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    animation: animate 2s linear infinite;
+}
+span:nth-child(2){
+    top:10px;
+    left:10px;
+    right: 10px;
+    bottom: 10px;
+    animation: animate 1s linear infinite;
+}
+span:nth-child(3){
+    top:20px;
+    left:20px;
+    right: 20px;
+    bottom: 20px;
+    animation: animate 0.7s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate3d(2,2,1,0deg);
+    }
+    100%{
+        transform: rotate3d(2,2,1,360deg);
+    }
+}
